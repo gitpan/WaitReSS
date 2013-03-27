@@ -1,0 +1,5 @@
+Changelog for WaitReSS
+
+0.001     2013-03-27 15:51:44 Europe/Paris
+  - initial release
+  - new commands: new, list, update, config
