@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command;
 {
-  $WaitReSS::App::Command::VERSION = '0.001';
+  $WaitReSS::App::Command::VERSION = '0.002';
 }
 # ABSTRACT: Base class for sub-commands
 
@@ -19,6 +19,10 @@ use App::Cmd::Setup -command;
 use Moose;
 use MooseX::Has::Sugar;
 use Path::Tiny;
+use UNIVERSAL::require;
+
+use WaitReSS::Config;
+use WaitReSS::Logging qw{ :config };
 
 
 # -- public methods
@@ -27,20 +31,34 @@ use Path::Tiny;
 sub opt_common {
     return (
         [ 'config|C=s' => "configuration file" ],
+        [],
+        [ "Logging options" ],
+        [ "verbose|v+"   => "be more verbose (can be repeated)",  {default=>0} ],
+        [ "quiet|q+"     => "be less versbose (can be repeated)", {default=>0} ],
+        [ "timestamp|t!" => "prefix logs with a timestamp (can be negated)", ],
+        [ "trace|T!"     => "prefix logs with a trace (can be negated)",     ],
     );
 }
 
 
-
-sub initialize {
-    my ($self, $opts) = @_;
+sub execute {
+    my ($self, $opts, $args) = @_;
 
     binmode(STDOUT, ":utf8");
     binmode(STDERR, ":utf8");
 
-    # first initialize the config singleton with the right path to
-    # configuration file.
-    WaitReSS::Config->new( file=>$opts->{config} ) if $opts->{config};
+    # first initialize the config with the right path to config file
+    $config->set_file( $opts->{config} ) if $opts->{config};
+
+    # then initialize the logging options
+    more_verbose() for 1 .. $opts->{verbose};
+    less_verbose() for 1 .. $opts->{quiet};
+    enable_timestamp( $opts->{timestamp} ) if exists $opts->{timestamp};
+    enable_trace    ( $opts->{trace} )     if exists $opts->{trace};
+
+    my $action = ref($self) =~ s/Command/Action/r;
+    $action->require or die $@;
+    $action->run($opts, $args);
 }
 
 
@@ -58,7 +76,7 @@ WaitReSS::App::Command - Base class for sub-commands
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 
@@ -72,12 +90,6 @@ This module is the base class for all sub-commands.
 
 Return an array of common options to be used in a command's C<opt_spec>
 method.
-
-=head2 initialize
-
-    $cmd->initialize($opts);
-
-Perform some various initializations.
 
 =for Pod::Coverage::TrustPod description opt_spec execute
 

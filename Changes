@@ -1,5 +1,14 @@
 Changelog for WaitReSS
 
+0.002     2013-04-09 13:50:37 Europe/Paris
+    - new commands: user
+    - config: possibility to delete a config (-d option)
+    - log: possibility to timestamp (-t option, log.timestamp config)
+    - log: possibility to trace (-T option, log.trace config)
+    - update: logging pid to better follow output
+    - all commands deported in their own modules to speed startup
+    - W:Collection moved to W:Feeds
+
 0.001     2013-03-27 15:51:44 Europe/Paris
-  - initial release
-  - new commands: new, list, update, config
+    - initial release
+    - new commands: new, list, update, config

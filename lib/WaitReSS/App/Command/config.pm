@@ -11,13 +11,11 @@ use warnings;
 
 package WaitReSS::App::Command::config;
 {
-  $WaitReSS::App::Command::config::VERSION = '0.001';
+  $WaitReSS::App::Command::config::VERSION = '0.002';
 }
-# ABSTRACT: Update feeds
+# ABSTRACT: Read/update WaitReSS configuration
 
 use WaitReSS::App -command;
-use WaitReSS::Config;
-use WaitReSS::Logging;
 
 
 # -- public methods
@@ -33,30 +31,11 @@ sub opt_spec {
         [ "mode" => hidden => { one_of => [
             [ "get|g"    => "get the value" ],
             [ "set|s"    => "set the value" ],
-#            [ "delete|d" => "delete it" ],
+            [ "delete|d" => "delete it" ],
         ] } ],
     );
 }
 
-sub execute {
-    my ($self, $opts, $args) = @_;
-    $self->initialize($opts);
-
-    my $config = WaitReSS::Config->instance;
-    my $key = shift @$args;
-    given ( $opts->mode ) {
-        when ( "get" ) {
-            info( $config->get( $key ) );
-        }
-        when ( "set" ) {
-            my $value = shift @$args;
-            $config->set( $key => $value );
-            $config->save;
-        }
-#        when ( "delete" ) {
-#        }
-    }
-}
 
 1;
 
@@ -66,11 +45,11 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Command::config - Update feeds
+WaitReSS::App::Command::config - Read/update WaitReSS configuration
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

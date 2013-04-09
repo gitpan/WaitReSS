@@ -12,11 +12,10 @@ use warnings;
 
 package WaitReSS::Feed;
 {
-  $WaitReSS::Feed::VERSION = '0.001';
+  $WaitReSS::Feed::VERSION = '0.002';
 }
 # ABSTRACT: A RSS feed
 
-use DateTime::Format::RSS;
 use Digest::MD5     qw{ md5_hex };
 use Fcntl;
 use LWP::Simple     qw{ get };
@@ -67,7 +66,7 @@ has _items => (
 
 sub _build__private_dir {
     my $self = shift;
-    my $dir = WaitReSS::Params->new->dir_feeds->child( $self->id );
+    my $dir = $params->dir_feeds->child( $self->id );
     debug( "private feed directory = $dir" );
     $dir->mkpath;
     return $dir;
@@ -232,7 +231,7 @@ WaitReSS::Feed - A RSS feed
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

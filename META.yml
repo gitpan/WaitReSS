@@ -19,54 +19,81 @@ name: WaitReSS
 provides:
   WaitReSS:
     file: lib/WaitReSS.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App:
     file: lib/WaitReSS/App.pm
-    version: 0.001
+    version: 0.002
+  WaitReSS::App::Action::config:
+    file: lib/WaitReSS/App/Action/config.pm
+    version: 0.002
+  WaitReSS::App::Action::import:
+    file: lib/WaitReSS/App/Action/import.pm
+    version: 0.002
+  WaitReSS::App::Action::list:
+    file: lib/WaitReSS/App/Action/list.pm
+    version: 0.002
+  WaitReSS::App::Action::new:
+    file: lib/WaitReSS/App/Action/new.pm
+    version: 0.002
+  WaitReSS::App::Action::update:
+    file: lib/WaitReSS/App/Action/update.pm
+    version: 0.002
+  WaitReSS::App::Action::user:
+    file: lib/WaitReSS/App/Action/user.pm
+    version: 0.002
   WaitReSS::App::Command:
     file: lib/WaitReSS/App/Command.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App::Command::config:
     file: lib/WaitReSS/App/Command/config.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App::Command::import:
     file: lib/WaitReSS/App/Command/import.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App::Command::list:
     file: lib/WaitReSS/App/Command/list.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App::Command::new:
     file: lib/WaitReSS/App/Command/new.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::App::Command::update:
     file: lib/WaitReSS/App/Command/update.pm
-    version: 0.001
-  WaitReSS::Collection:
-    file: lib/WaitReSS/Collection.pm
-    version: 0.001
+    version: 0.002
+  WaitReSS::App::Command::user:
+    file: lib/WaitReSS/App/Command/user.pm
+    version: 0.002
   WaitReSS::Config:
     file: lib/WaitReSS/Config.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::Feed:
     file: lib/WaitReSS/Feed.pm
-    version: 0.001
+    version: 0.002
+  WaitReSS::Feeds:
+    file: lib/WaitReSS/Feeds.pm
+    version: 0.002
   WaitReSS::Item:
     file: lib/WaitReSS/Item.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::Logging:
     file: lib/WaitReSS/Logging.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::Params:
     file: lib/WaitReSS/Params.pm
-    version: 0.001
+    version: 0.002
   WaitReSS::Types:
     file: lib/WaitReSS/Types.pm
-    version: 0.001
+    version: 0.002
+  WaitReSS::User:
+    file: lib/WaitReSS/User.pm
+    version: 0.002
+  WaitReSS::Users:
+    file: lib/WaitReSS/Users.pm
+    version: 0.002
 requires:
   App::Cmd::Setup: 0
   DateTime: 0
-  DateTime::Format::RSS: 0
   Digest::MD5: 0
+  Exporter: 0
   Exporter::Lite: 0
   Fcntl: 0
   File::HomeDir: 0
@@ -77,13 +104,14 @@ requires:
   Moose::Util::TypeConstraints: 0
   MooseX::Has::Sugar: 0
   MooseX::SemiAffordanceAccessor: 0
-  MooseX::Singleton: 0
   Parallel::ForkManager: 0
   Path::Tiny: 0
   Term::ANSIColor: 0
+  UNIVERSAL::require: 0
   XML::Feed: 0
   XML::OPML::LibXML: 0
   YAML::XS: 0
+  parent: 0
   perl: 5.016
   strict: 0
   warnings: 0
@@ -91,7 +119,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=WaitReSS
   homepage: http://search.cpan.org/dist/WaitReSS/
   repository: git://github.com/jquelin/waitress.git
-version: 0.001
+version: 0.002
 x_Dist_Zilla:
   perl:
     version: 5.016003

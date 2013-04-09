@@ -11,14 +11,11 @@ use warnings;
 
 package WaitReSS::App::Command::list;
 {
-  $WaitReSS::App::Command::list::VERSION = '0.001';
+  $WaitReSS::App::Command::list::VERSION = '0.002';
 }
 # ABSTRACT: Register a new feed
 
 use WaitReSS::App -command;
-use WaitReSS::Collection;
-use WaitReSS::Feed;
-use WaitReSS::Logging;
 
 
 # -- public methods
@@ -34,15 +31,6 @@ sub opt_spec {
     );
 }
 
-sub execute {
-    my ($self, $opts, $args) = @_;
-    $self->initialize($opts);
-
-    my $coll = WaitReSS::Collection->new;
-    foreach my $feed ( $coll->feeds ) {
-        info( $feed->as_string );
-    }
-}
 
 1;
 
@@ -56,7 +44,7 @@ WaitReSS::App::Command::list - Register a new feed
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Types;
 {
-  $WaitReSS::Types::VERSION = '0.001';
+  $WaitReSS::Types::VERSION = '0.002';
 }
 # ABSTRACT: Types used in the distribution
 
@@ -41,7 +41,7 @@ WaitReSS::Types - Types used in the distribution
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

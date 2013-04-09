@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App;
 {
-  $WaitReSS::App::VERSION = '0.001';
+  $WaitReSS::App::VERSION = '0.002';
 }
 # ABSTRACT: WaitReSS's App::Cmd
 
@@ -31,7 +31,7 @@ WaitReSS::App - WaitReSS's App::Cmd
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

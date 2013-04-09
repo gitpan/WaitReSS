@@ -11,14 +11,11 @@ use warnings;
 
 package WaitReSS::App::Command::import;
 {
-  $WaitReSS::App::Command::import::VERSION = '0.001';
+  $WaitReSS::App::Command::import::VERSION = '0.002';
 }
 # ABSTRACT: Import feeds from OPML file
 
-use XML::OPML::LibXML;
-
 use WaitReSS::App -command;
-use WaitReSS::Collection;
 
 
 # -- public methods
@@ -34,21 +31,6 @@ sub opt_spec {
     );
 }
 
-sub execute {
-    my ($self, $opts, $args) = @_;
-    $self->initialize($opts);
-
-    my $file = shift @$args;
-    my $opml = XML::OPML::LibXML->new;
-    my $doc  = $opml->parse_file($file);
-
-    my $coll = WaitReSS::Collection->new;
-    $doc->walkdown( sub {
-        my $outline = shift;
-        return if $outline->is_container;
-        $coll->register( $outline->xml_url );
-    } );
-}
 
 1;
 
@@ -62,7 +44,7 @@ WaitReSS::App::Command::import - Import feeds from OPML file
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

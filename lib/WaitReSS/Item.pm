@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS::Item;
 {
-  $WaitReSS::Item::VERSION = '0.001';
+  $WaitReSS::Item::VERSION = '0.002';
 }
 # ABSTRACT: A RSS item
 
@@ -55,7 +55,7 @@ WaitReSS::Item - A RSS item
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

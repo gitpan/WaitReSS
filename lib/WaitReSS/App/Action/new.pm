@@ -1,4 +1,3 @@
-#!/usr/bin/perl
 #
 # This file is part of WaitReSS
 #
@@ -7,19 +6,30 @@
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-
 use 5.016;
 use warnings;
 
-# PODNAME:  waitress
-# ABSTRACT: Manage WaitReSS from command-line
+package WaitReSS::App::Action::new;
+{
+  $WaitReSS::App::Action::new::VERSION = '0.002';
+}
+# ABSTRACT: Implementation of new command
 
-use Find::Lib '../lib';
-use WaitReSS::App;
+use WaitReSS::Feeds;
 
-WaitReSS::App->run;
 
-exit;
+# -- public methods
+
+
+sub run {
+    my ($pkg, $opts, $args) = @_;
+
+    my $url = shift @$args;
+    $feeds->register( $url );
+}
+
+
+1;
 
 __END__
 
@@ -27,25 +37,24 @@ __END__
 
 =head1 NAME
 
-waitress - Manage WaitReSS from command-line
+WaitReSS::App::Action::new - Implementation of new command
 
 =head1 VERSION
 
 version 0.002
 
-=head1 SYNOPSIS
-
-    # for help purposes
-    waitress commands
-    waitress help
-    waitress help subcommand
-
 =head1 DESCRIPTION
 
-This script allows to control feeds from within the command-line. 
-It is providing various subcommands -
-which list is available with C<waitress commands>. Each of the commands
-provides some help when running C<waitress help subcommand>.
+This package implements the C<new> command. It is in a module of its
+own to minimize the amount of code loaded at runtime.
+
+=head1 METHODS
+
+=head2 run
+
+    $pkg->run( $opts, $args );
+
+Run the actual command implementation.
 
 =head1 AUTHOR
 

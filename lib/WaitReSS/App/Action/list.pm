@@ -9,26 +9,25 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::App::Command::new;
+package WaitReSS::App::Action::list;
 {
-  $WaitReSS::App::Command::new::VERSION = '0.002';
+  $WaitReSS::App::Action::list::VERSION = '0.002';
 }
-# ABSTRACT: Register a new feed
+# ABSTRACT: Implementation of list command
 
-use WaitReSS::App -command;
+use WaitReSS::Feeds;
+use WaitReSS::Logging;
 
 
 # -- public methods
 
-sub description {
-"Register a new feed within WaitRess."
-}
 
-sub opt_spec {
-    my $self = shift;
-    return (
-        $self->opt_common
-    );
+sub run {
+    my ($pkg, $opts, $args) = @_;
+
+    foreach my $feed ( $feeds->list ) {
+        info( $feed->as_string );
+    }
 }
 
 
@@ -40,7 +39,7 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Command::new - Register a new feed
+WaitReSS::App::Action::list - Implementation of list command
 
 =head1 VERSION
 
@@ -48,8 +47,16 @@ version 0.002
 
 =head1 DESCRIPTION
 
-This command registers a new feed within WaitReSS. From now on, the feed
-will be updated on a regular basis.
+This package implements the C<list> command. It is in a module of its
+own to minimize the amount of code loaded at runtime.
+
+=head1 METHODS
+
+=head2 run
+
+    $pkg->run( $opts, $args );
+
+Run the actual command implementation.
 
 =head1 AUTHOR
 

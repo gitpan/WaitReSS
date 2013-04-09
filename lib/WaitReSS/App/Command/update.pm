@@ -11,14 +11,11 @@ use warnings;
 
 package WaitReSS::App::Command::update;
 {
-  $WaitReSS::App::Command::update::VERSION = '0.001';
+  $WaitReSS::App::Command::update::VERSION = '0.002';
 }
 # ABSTRACT: Update feeds
 
-use Parallel::ForkManager;
-
 use WaitReSS::App -command;
-use WaitReSS::Collection;
 
 
 # -- public methods
@@ -34,19 +31,6 @@ sub opt_spec {
     );
 }
 
-sub execute {
-    my ($self, $opts, $args) = @_;
-    $self->initialize($opts);
-
-    my $pm   = Parallel::ForkManager->new(5);
-    my $coll = WaitReSS::Collection->new;
-    foreach my $feed ( $coll->feeds ) {
-        my $pid = $pm->start and next;  # forking
-        my $n = $feed->update;
-        $pm->finish;                    # ends child process
-    }
-    $pm->wait_all_children;
-}
 
 1;
 
@@ -60,7 +44,7 @@ WaitReSS::App::Command::update - Update feeds
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 DESCRIPTION
 

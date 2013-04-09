@@ -9,24 +9,31 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::Collection;
+package WaitReSS::Feeds;
 {
-  $WaitReSS::Collection::VERSION = '0.001';
+  $WaitReSS::Feeds::VERSION = '0.002';
 }
 # ABSTRACT: Collection of feeds
 
-use MooseX::Singleton;
+use Exporter::Lite;
+use Moose;
 use MooseX::Has::Sugar;
 use MooseX::SemiAffordanceAccessor;
 use Path::Tiny;
 use YAML::XS qw{ Load Dump };
 
+use WaitReSS::Feed;
 use WaitReSS::Logging;
 use WaitReSS::Params;
 
 
-# -- attributes
+# -- module vars
 
+our @EXPORT = qw{ $feeds };
+our $feeds  = __PACKAGE__->new;
+
+
+# -- attributes
 
 # the list of feeds
 has _feeds => (
@@ -34,7 +41,7 @@ has _feeds => (
     isa     => 'HashRef[WaitReSS::Feed]',
     traits  => ['Hash'],
     handles => {
-        feeds       => 'values',
+        list        => 'values',
         _register   => 'set',
         _has_feed  => 'exists',
     },
@@ -45,7 +52,7 @@ has _feeds => (
 
 sub _build__feeds {
     my $self = shift;
-    my $dir = WaitReSS::Params->new->dir_feeds;
+    my $dir = $params->dir_feeds;
     my %feeds;
     foreach my $path ( $dir->children ) {
         my $feed = WaitReSS::Feed->new_from_directory( $path );
@@ -56,6 +63,9 @@ sub _build__feeds {
 
 
 # -- public methods
+
+
+# defined in _feeds attribute
 
 
 
@@ -105,25 +115,28 @@ __END__
 
 =head1 NAME
 
-WaitReSS::Collection - Collection of feeds
+WaitReSS::Feeds - Collection of feeds
 
 =head1 VERSION
 
-version 0.001
+version 0.002
+
+=head1 SYNOPSIS
+
+    use WaitReSS::Feeds;
+    # $feeds is automatically available
+    my @feeds = $feeds->list;
 
 =head1 DESCRIPTION
 
 This class implements a collection of feeds. This list of feeds is
 unordered wrt the user classification.
 
-The collection is implemented as a singleton, which loads the list of
-feeds at build time.
-
 =head1 METHODS
 
-=head2 feeds
+=head2 list
 
-    my @feeds = $collection->feeds;
+    my @feeds = $feeds->list;
 
 Return the list of feeds (L<WaitReSS::Feed> objects) currently existing
 within WaitReSS.
