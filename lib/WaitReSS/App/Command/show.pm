@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::show;
 {
-  $WaitReSS::App::Command::show::VERSION = '0.003';
+  $WaitReSS::App::Command::show::VERSION = '0.004';
 }
 # ABSTRACT: Show a given user's feeds
 
@@ -45,7 +45,7 @@ WaitReSS::App::Command::show - Show a given user's feeds
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

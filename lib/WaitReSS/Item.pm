@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS::Item;
 {
-  $WaitReSS::Item::VERSION = '0.003';
+  $WaitReSS::Item::VERSION = '0.004';
 }
 # ABSTRACT: A RSS item
 
@@ -28,7 +28,7 @@ use MooseX::SemiAffordanceAccessor;
 has link        => ( ro, required, isa=>"Str" );
 has title       => ( ro, required, isa=>"Str" );
 has description => ( ro, isa=>"Str" );
-has pub_date    => ( ro, isa=>"Int", default=>0 );
+has pub_date    => ( ro, isa=>"Int" );
 
 
 # -- public methods
@@ -70,7 +70,7 @@ WaitReSS::Item - A RSS item
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

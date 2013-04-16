@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::register;
 {
-  $WaitReSS::App::Action::register::VERSION = '0.003';
+  $WaitReSS::App::Action::register::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of register command
 
@@ -55,7 +55,7 @@ WaitReSS::App::Action::register - Implementation of register command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

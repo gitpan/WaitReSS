@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS::Feed;
 {
-  $WaitReSS::Feed::VERSION = '0.003';
+  $WaitReSS::Feed::VERSION = '0.004';
 }
 # ABSTRACT: A RSS feed
 
@@ -165,9 +165,11 @@ sub update {
     debug( "found $count items" );
     my ($existing, $inserted) = (0,0);
     foreach my $i ( $rss->entries ) {
-        my $pubdate = $i->issued
-            ? $i->issued->epoch
-            : time();
+        my $pubdate = $i->modified
+            ? $i->modified->epoch
+            : $i->issued
+                ? $i->issued->epoch
+                : time();
         my $item = WaitReSS::Item->new(
             link        => $i->link,
             title       => $i->title // '',
@@ -236,7 +238,7 @@ WaitReSS::Feed - A RSS feed
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

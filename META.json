@@ -73,115 +73,115 @@
    "provides" : {
       "WaitReSS" : {
          "file" : "lib/WaitReSS.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App" : {
          "file" : "lib/WaitReSS/App.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::config" : {
          "file" : "lib/WaitReSS/App/Action/config.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::import" : {
          "file" : "lib/WaitReSS/App/Action/import.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::list" : {
          "file" : "lib/WaitReSS/App/Action/list.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::new" : {
          "file" : "lib/WaitReSS/App/Action/new.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::register" : {
          "file" : "lib/WaitReSS/App/Action/register.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::show" : {
          "file" : "lib/WaitReSS/App/Action/show.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::update" : {
          "file" : "lib/WaitReSS/App/Action/update.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Action::user" : {
          "file" : "lib/WaitReSS/App/Action/user.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command" : {
          "file" : "lib/WaitReSS/App/Command.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::config" : {
          "file" : "lib/WaitReSS/App/Command/config.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::import" : {
          "file" : "lib/WaitReSS/App/Command/import.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::list" : {
          "file" : "lib/WaitReSS/App/Command/list.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::new" : {
          "file" : "lib/WaitReSS/App/Command/new.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::register" : {
          "file" : "lib/WaitReSS/App/Command/register.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::show" : {
          "file" : "lib/WaitReSS/App/Command/show.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::update" : {
          "file" : "lib/WaitReSS/App/Command/update.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::App::Command::user" : {
          "file" : "lib/WaitReSS/App/Command/user.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Config" : {
          "file" : "lib/WaitReSS/Config.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Feed" : {
          "file" : "lib/WaitReSS/Feed.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Feeds" : {
          "file" : "lib/WaitReSS/Feeds.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Item" : {
          "file" : "lib/WaitReSS/Item.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Logging" : {
          "file" : "lib/WaitReSS/Logging.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Params" : {
          "file" : "lib/WaitReSS/Params.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Types" : {
          "file" : "lib/WaitReSS/Types.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::User" : {
          "file" : "lib/WaitReSS/User.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       },
       "WaitReSS::Users" : {
          "file" : "lib/WaitReSS/Users.pm",
-         "version" : "0.003"
+         "version" : "0.004"
       }
    },
    "release_status" : "stable",
@@ -197,7 +197,7 @@
          "web" : "https://github.com/jquelin/waitress"
       }
    },
-   "version" : "0.003",
+   "version" : "0.004",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.016003"

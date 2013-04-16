@@ -1,5 +1,10 @@
 Changelog for WaitReSS
 
+0.004     2013-04-16 14:57:20 Europe/Paris
+    - import: fix missing use error
+    - W:Item: no default publication date
+    - W:Item: storing modification date if available
+
 0.003     2013-04-16 14:37:01 Europe/Paris
     - new commands: register, show
     - import: registering feeds for a given user

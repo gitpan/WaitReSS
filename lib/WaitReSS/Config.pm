@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Config;
 {
-  $WaitReSS::Config::VERSION = '0.003';
+  $WaitReSS::Config::VERSION = '0.004';
 }
 # ABSTRACT: WaitReSS configuration
 
@@ -130,7 +130,7 @@ WaitReSS::Config - WaitReSS configuration
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

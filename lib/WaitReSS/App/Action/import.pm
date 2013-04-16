@@ -11,13 +11,14 @@ use warnings;
 
 package WaitReSS::App::Action::import;
 {
-  $WaitReSS::App::Action::import::VERSION = '0.003';
+  $WaitReSS::App::Action::import::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of import command
 
 use XML::OPML::LibXML;
 
 use WaitReSS::Config;
+use WaitReSS::Logging;
 use WaitReSS::Users;
 
 
@@ -65,7 +66,7 @@ WaitReSS::App::Action::import - Implementation of import command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

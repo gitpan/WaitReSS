@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::show;
 {
-  $WaitReSS::App::Action::show::VERSION = '0.003';
+  $WaitReSS::App::Action::show::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of show command
 
@@ -66,7 +66,7 @@ WaitReSS::App::Action::show - Implementation of show command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

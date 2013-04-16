@@ -20,7 +20,7 @@ my %module_build_args = (
     "Jerome Quelin <jquelin\@gmail.com>"
   ],
   "dist_name" => "WaitReSS",
-  "dist_version" => "0.003",
+  "dist_version" => "0.004",
   "license" => "perl",
   "module_name" => "WaitReSS",
   "recommends" => {},

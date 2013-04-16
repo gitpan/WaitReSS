@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::import;
 {
-  $WaitReSS::App::Command::import::VERSION = '0.003';
+  $WaitReSS::App::Command::import::VERSION = '0.004';
 }
 # ABSTRACT: Import feeds from OPML file
 
@@ -45,7 +45,7 @@ WaitReSS::App::Command::import - Import feeds from OPML file
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

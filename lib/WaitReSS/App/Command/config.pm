@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::config;
 {
-  $WaitReSS::App::Command::config::VERSION = '0.003';
+  $WaitReSS::App::Command::config::VERSION = '0.004';
 }
 # ABSTRACT: Read/update WaitReSS configuration
 
@@ -49,7 +49,7 @@ WaitReSS::App::Command::config - Read/update WaitReSS configuration
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

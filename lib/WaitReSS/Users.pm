@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Users;
 {
-  $WaitReSS::Users::VERSION = '0.003';
+  $WaitReSS::Users::VERSION = '0.004';
 }
 # ABSTRACT: List of users
 
@@ -129,7 +129,7 @@ WaitReSS::Users - List of users
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

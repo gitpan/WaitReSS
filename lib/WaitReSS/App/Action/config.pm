@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::config;
 {
-  $WaitReSS::App::Action::config::VERSION = '0.003';
+  $WaitReSS::App::Action::config::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of config command
 
@@ -55,7 +55,7 @@ WaitReSS::App::Action::config - Implementation of config command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

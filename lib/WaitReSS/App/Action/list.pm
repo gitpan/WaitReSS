@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::list;
 {
-  $WaitReSS::App::Action::list::VERSION = '0.003';
+  $WaitReSS::App::Action::list::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of list command
 
@@ -43,7 +43,7 @@ WaitReSS::App::Action::list - Implementation of list command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

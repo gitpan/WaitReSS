@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Params;
 {
-  $WaitReSS::Params::VERSION = '0.003';
+  $WaitReSS::Params::VERSION = '0.004';
 }
 # ABSTRACT: WaitReSS run-time parameters
 
@@ -81,7 +81,7 @@ WaitReSS::Params - WaitReSS run-time parameters
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

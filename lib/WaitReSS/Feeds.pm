@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Feeds;
 {
-  $WaitReSS::Feeds::VERSION = '0.003';
+  $WaitReSS::Feeds::VERSION = '0.004';
 }
 # ABSTRACT: Collection of feeds
 
@@ -120,7 +120,7 @@ WaitReSS::Feeds - Collection of feeds
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 SYNOPSIS
 

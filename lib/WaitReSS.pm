@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS;
 {
-  $WaitReSS::VERSION = '0.003';
+  $WaitReSS::VERSION = '0.004';
 }
 # ABSTRACT: A server-side RSS aggregator
 
@@ -29,7 +29,7 @@ WaitReSS - A server-side RSS aggregator
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

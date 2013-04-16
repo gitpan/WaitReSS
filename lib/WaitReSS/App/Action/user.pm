@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::user;
 {
-  $WaitReSS::App::Action::user::VERSION = '0.003';
+  $WaitReSS::App::Action::user::VERSION = '0.004';
 }
 # ABSTRACT: Implementation of user command
 
@@ -54,7 +54,7 @@ WaitReSS::App::Action::user - Implementation of user command
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Logging;
 {
-  $WaitReSS::Logging::VERSION = '0.003';
+  $WaitReSS::Logging::VERSION = '0.004';
 }
 # ABSTRACT: Centralized logging utilities
 
@@ -114,7 +114,7 @@ WaitReSS::Logging - Centralized logging utilities
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 

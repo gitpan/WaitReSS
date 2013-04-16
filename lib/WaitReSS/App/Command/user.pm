@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::user;
 {
-  $WaitReSS::App::Command::user::VERSION = '0.003';
+  $WaitReSS::App::Command::user::VERSION = '0.004';
 }
 # ABSTRACT: Manage WaitReSS users
 
@@ -49,7 +49,7 @@ WaitReSS::App::Command::user - Manage WaitReSS users
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 DESCRIPTION
 
