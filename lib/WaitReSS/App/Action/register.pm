@@ -9,15 +9,14 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::App::Action::import;
+package WaitReSS::App::Action::register;
 {
-  $WaitReSS::App::Action::import::VERSION = '0.003';
+  $WaitReSS::App::Action::register::VERSION = '0.003';
 }
-# ABSTRACT: Implementation of import command
-
-use XML::OPML::LibXML;
+# ABSTRACT: Implementation of register command
 
 use WaitReSS::Config;
+use WaitReSS::Logging;
 use WaitReSS::Users;
 
 
@@ -39,17 +38,8 @@ sub run {
         exit 1;
     }
 
-    # parse opml file
-    my $file = shift @$args;
-    my $opml = XML::OPML::LibXML->new;
-    my $doc  = $opml->parse_file($file);
-
-    # register feeds for the user
-    $doc->walkdown( sub {
-        my $outline = shift;
-        return if $outline->is_container;
-        $user->register(  $outline->xml_url );
-    } );
+    my $url = shift @$args;
+    $user->register( $url );
 }
 
 
@@ -61,7 +51,7 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Action::import - Implementation of import command
+WaitReSS::App::Action::register - Implementation of register command
 
 =head1 VERSION
 
@@ -69,8 +59,8 @@ version 0.003
 
 =head1 DESCRIPTION
 
-This package implements the C<import> command. It is in a module of its
-own to minimize the amount of code loaded at runtime.
+This package implements the C<register> command. It is in a module of
+its own to minimize the amount of code loaded at runtime.
 
 =head1 METHODS
 

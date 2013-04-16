@@ -9,15 +9,15 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::App::Action::import;
+package WaitReSS::App::Action::show;
 {
-  $WaitReSS::App::Action::import::VERSION = '0.003';
+  $WaitReSS::App::Action::show::VERSION = '0.003';
 }
-# ABSTRACT: Implementation of import command
-
-use XML::OPML::LibXML;
+# ABSTRACT: Implementation of show command
 
 use WaitReSS::Config;
+use WaitReSS::Feeds;
+use WaitReSS::Logging;
 use WaitReSS::Users;
 
 
@@ -39,17 +39,18 @@ sub run {
         exit 1;
     }
 
-    # parse opml file
-    my $file = shift @$args;
-    my $opml = XML::OPML::LibXML->new;
-    my $doc  = $opml->parse_file($file);
+    # show unred items for the user
+    my $id = shift @$args;
+    my %items = $user->unread_items( $id );
+    foreach my $id ( sort keys %items ) {
+        my $feed = $feeds->by_id( $id );
+        info( $feed->id . " " . $feed->url . " (" . $feed->title . ")"  );
+        my @items = sort {$a->pub_date <=> $b->pub_date} @{ $items{$id} };
+        foreach my $item ( @items ) {
+            info( " "x4 . $item->as_string );
+        }
 
-    # register feeds for the user
-    $doc->walkdown( sub {
-        my $outline = shift;
-        return if $outline->is_container;
-        $user->register(  $outline->xml_url );
-    } );
+    }
 }
 
 
@@ -61,7 +62,7 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Action::import - Implementation of import command
+WaitReSS::App::Action::show - Implementation of show command
 
 =head1 VERSION
 
@@ -69,7 +70,7 @@ version 0.003
 
 =head1 DESCRIPTION
 
-This package implements the C<import> command. It is in a module of its
+This package implements the C<show> command. It is in a module of its
 own to minimize the amount of code loaded at runtime.
 
 =head1 METHODS

@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS::Item;
 {
-  $WaitReSS::Item::VERSION = '0.002';
+  $WaitReSS::Item::VERSION = '0.003';
 }
 # ABSTRACT: A RSS item
 
@@ -28,6 +28,7 @@ use MooseX::SemiAffordanceAccessor;
 has link        => ( ro, required, isa=>"Str" );
 has title       => ( ro, required, isa=>"Str" );
 has description => ( ro, isa=>"Str" );
+has pub_date    => ( ro, isa=>"Int", default=>0 );
 
 
 # -- public methods
@@ -38,6 +39,20 @@ sub id {
     return md5_hex( $self->link );
 }
 
+
+
+sub as_string {
+    my $self = shift;
+    return $self->id . " [" . $self->timestamp . "] " . $self->title;
+}
+
+
+
+sub timestamp {
+    my $self = shift;
+    my $dt = DateTime->from_epoch( epoch=>$self->pub_date );
+    return $dt->ymd . " " . $dt->hms;
+}
 
 
 no Moose;
@@ -55,7 +70,7 @@ WaitReSS::Item - A RSS item
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
@@ -75,6 +90,10 @@ The url (a string) to which the RSS item is pointing to. Required.
 
 The item description, usually the whole article or a summary.
 
+=head2 pub_date
+
+The item publication date (stored as an epoch integer).
+
 =head1 METHODS
 
 =head2 id
@@ -83,6 +102,19 @@ The item description, usually the whole article or a summary.
 
 Return a unique identifier for the item. Internally, it's a MD5 sum of
 the url pointed by the item.
+
+=head2 as_string
+
+    my $str = $item->as_string;
+
+Return a string representation of the item.
+
+=head2 timestamp
+
+    my $str = $item->timestamp;
+
+Return a string representation (C<yyyy-mm-dd hh:mm:ss> format) of the
+C<pub_date> attribute.
 
 =head1 AUTHOR
 

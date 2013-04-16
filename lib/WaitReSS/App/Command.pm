@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command;
 {
-  $WaitReSS::App::Command::VERSION = '0.002';
+  $WaitReSS::App::Command::VERSION = '0.003';
 }
 # ABSTRACT: Base class for sub-commands
 
@@ -76,7 +76,7 @@ WaitReSS::App::Command - Base class for sub-commands
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

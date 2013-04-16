@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Feeds;
 {
-  $WaitReSS::Feeds::VERSION = '0.002';
+  $WaitReSS::Feeds::VERSION = '0.003';
 }
 # ABSTRACT: Collection of feeds
 
@@ -42,8 +42,9 @@ has _feeds => (
     traits  => ['Hash'],
     handles => {
         list        => 'values',
+        by_id       => 'get',
         _register   => 'set',
-        _has_feed  => 'exists',
+        _has_feed   => 'exists',
     },
 );
 
@@ -71,7 +72,7 @@ sub _build__feeds {
 
 sub register {
     my ($self, $url) = @_;
-    info( "registering new feed: $url" );
+    debug( "registering new feed: $url" );
 
     my $feed = $self->_feed_by_url( $url );
     if ( defined $feed ) {
@@ -96,7 +97,7 @@ sub register {
 #
 sub _feed_by_url {
     my ($self, $url) = @_;
-    foreach my $feed ( $self->feeds ) {
+    foreach my $feed ( $self->list ) {
         next if $feed->url ne $url;
         return $feed;
     }
@@ -119,7 +120,7 @@ WaitReSS::Feeds - Collection of feeds
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
@@ -143,10 +144,10 @@ within WaitReSS.
 
 =head2 register
 
-    $collection->register( $url );
+    my $feed = $collection->register( $url );
 
 Register C<$url> in the C<$collection> of feeds if it doesn't already
-exist.
+exist. Return a L<WaitReSS> feed.
 
 =head1 AUTHOR
 

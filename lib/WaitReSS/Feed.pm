@@ -12,7 +12,7 @@ use warnings;
 
 package WaitReSS::Feed;
 {
-  $WaitReSS::Feed::VERSION = '0.002';
+  $WaitReSS::Feed::VERSION = '0.003';
 }
 # ABSTRACT: A RSS feed
 
@@ -54,9 +54,10 @@ has _items => (
     isa       => "HashRef[WaitReSS::Item]",
     traits    => ['Hash'],
     handles => {
-        nb_items     => "count",
-        _has_item    => "exists",
-        _insert_item => "set",
+        nb_items        => "count",
+        items           => "values",
+        _has_item       => "exists",
+        _insert_item    => "set",
     },
 );
 
@@ -112,6 +113,10 @@ sub id {
     my $self = shift;
     return md5_hex( $self->url );
 }
+
+
+
+# defined in _items attribute
 
 
 
@@ -231,7 +236,7 @@ WaitReSS::Feed - A RSS feed
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 
@@ -283,6 +288,12 @@ Return a md5 sum of the feed url.
     my $count = $feed->nb_items;
 
 Return the C<$count> of items currently in the feed.
+
+=head2 items
+
+    my @items = $feed->items;
+
+Return the C<@items> (L<WaitReSS::Item> objects) currently in the feed.
 
 =head2 save
 

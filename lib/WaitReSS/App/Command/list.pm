@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::list;
 {
-  $WaitReSS::App::Command::list::VERSION = '0.002';
+  $WaitReSS::App::Command::list::VERSION = '0.003';
 }
 # ABSTRACT: Register a new feed
 
@@ -44,7 +44,7 @@ WaitReSS::App::Command::list - Register a new feed
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

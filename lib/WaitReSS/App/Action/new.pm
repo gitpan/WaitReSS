@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Action::new;
 {
-  $WaitReSS::App::Action::new::VERSION = '0.002';
+  $WaitReSS::App::Action::new::VERSION = '0.003';
 }
 # ABSTRACT: Implementation of new command
 
@@ -41,7 +41,7 @@ WaitReSS::App::Action::new - Implementation of new command
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

@@ -9,11 +9,11 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::App::Command::update;
+package WaitReSS::App::Command::register;
 {
-  $WaitReSS::App::Command::update::VERSION = '0.003';
+  $WaitReSS::App::Command::register::VERSION = '0.003';
 }
-# ABSTRACT: Update feeds
+# ABSTRACT: Register a feed for a given user
 
 use WaitReSS::App -command;
 
@@ -21,13 +21,14 @@ use WaitReSS::App -command;
 # -- public methods
 
 sub description {
-"Update feeds that WaitReSS watches."
+"Register a feed for a given user."
 }
 
 sub opt_spec {
     my $self = shift;
     return (
         $self->opt_common,
+        [ "user|u=s", "the user registering a feed" ],
     );
 }
 
@@ -40,7 +41,7 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Command::update - Update feeds
+WaitReSS::App::Command::register - Register a feed for a given user
 
 =head1 VERSION
 
@@ -48,7 +49,8 @@ version 0.003
 
 =head1 DESCRIPTION
 
-This command force an update of all registered feeds within WaitReSS.
+This command allows to register a feed for a given user. The feed is
+created if needed.
 
 =head1 AUTHOR
 

@@ -20,7 +20,7 @@ my %module_build_args = (
     "Jerome Quelin <jquelin\@gmail.com>"
   ],
   "dist_name" => "WaitReSS",
-  "dist_version" => "0.002",
+  "dist_version" => "0.003",
   "license" => "perl",
   "module_name" => "WaitReSS",
   "recommends" => {},
@@ -35,6 +35,7 @@ my %module_build_args = (
     "File::HomeDir" => 0,
     "Find::Lib" => 0,
     "LWP::Simple" => 0,
+    "List::AllUtils" => 0,
     "MLDBM" => 0,
     "Moose" => 0,
     "Moose::Util::TypeConstraints" => 0,

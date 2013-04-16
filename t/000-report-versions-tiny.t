@@ -59,6 +59,7 @@ eval { $v .= pmver('File::HomeDir','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('Find::Lib','any version') };
 eval { $v .= pmver('LWP::Simple','any version') };
+eval { $v .= pmver('List::AllUtils','any version') };
 eval { $v .= pmver('MLDBM','any version') };
 eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','any version') };

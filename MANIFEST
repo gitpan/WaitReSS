@@ -14,6 +14,8 @@ lib/WaitReSS/App/Action/config.pm
 lib/WaitReSS/App/Action/import.pm
 lib/WaitReSS/App/Action/list.pm
 lib/WaitReSS/App/Action/new.pm
+lib/WaitReSS/App/Action/register.pm
+lib/WaitReSS/App/Action/show.pm
 lib/WaitReSS/App/Action/update.pm
 lib/WaitReSS/App/Action/user.pm
 lib/WaitReSS/App/Command.pm
@@ -21,6 +23,8 @@ lib/WaitReSS/App/Command/config.pm
 lib/WaitReSS/App/Command/import.pm
 lib/WaitReSS/App/Command/list.pm
 lib/WaitReSS/App/Command/new.pm
+lib/WaitReSS/App/Command/register.pm
+lib/WaitReSS/App/Command/show.pm
 lib/WaitReSS/App/Command/update.pm
 lib/WaitReSS/App/Command/user.pm
 lib/WaitReSS/Config.pm

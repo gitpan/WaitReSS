@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::Config;
 {
-  $WaitReSS::Config::VERSION = '0.002';
+  $WaitReSS::Config::VERSION = '0.003';
 }
 # ABSTRACT: WaitReSS configuration
 
@@ -36,6 +36,7 @@ my %default = (
     "log.pid"           => 0,
     "log.timestamp"     => 0,
     "log.trace"         => 0,
+    "cli.default.user"  => undef,
 );
 
 
@@ -129,7 +130,7 @@ WaitReSS::Config - WaitReSS configuration
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 

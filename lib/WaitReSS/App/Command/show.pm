@@ -9,11 +9,11 @@
 use 5.016;
 use warnings;
 
-package WaitReSS::App::Command::update;
+package WaitReSS::App::Command::show;
 {
-  $WaitReSS::App::Command::update::VERSION = '0.003';
+  $WaitReSS::App::Command::show::VERSION = '0.003';
 }
-# ABSTRACT: Update feeds
+# ABSTRACT: Show a given user's feeds
 
 use WaitReSS::App -command;
 
@@ -21,13 +21,14 @@ use WaitReSS::App -command;
 # -- public methods
 
 sub description {
-"Update feeds that WaitReSS watches."
+"Show a given user's feeds."
 }
 
 sub opt_spec {
     my $self = shift;
     return (
         $self->opt_common,
+        [ "user|u=s", "the user whose feeds to show" ],
     );
 }
 
@@ -40,7 +41,7 @@ __END__
 
 =head1 NAME
 
-WaitReSS::App::Command::update - Update feeds
+WaitReSS::App::Command::show - Show a given user's feeds
 
 =head1 VERSION
 
@@ -48,7 +49,7 @@ version 0.003
 
 =head1 DESCRIPTION
 
-This command force an update of all registered feeds within WaitReSS.
+This command allows to show a given user's feeds.
 
 =head1 AUTHOR
 

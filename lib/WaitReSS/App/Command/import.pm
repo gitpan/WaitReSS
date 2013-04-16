@@ -11,7 +11,7 @@ use warnings;
 
 package WaitReSS::App::Command::import;
 {
-  $WaitReSS::App::Command::import::VERSION = '0.002';
+  $WaitReSS::App::Command::import::VERSION = '0.003';
 }
 # ABSTRACT: Import feeds from OPML file
 
@@ -28,6 +28,7 @@ sub opt_spec {
     my $self = shift;
     return (
         $self->opt_common,
+        [ "user|u=s", "the user importing feeds" ],
     );
 }
 
@@ -44,7 +45,7 @@ WaitReSS::App::Command::import - Import feeds from OPML file
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 DESCRIPTION
 

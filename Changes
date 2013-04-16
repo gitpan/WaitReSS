@@ -1,7 +1,12 @@
 Changelog for WaitReSS
 
+0.003     2013-04-16 14:37:01 Europe/Paris
+    - new commands: register, show
+    - import: registering feeds for a given user
+    - now storing item publication date
+
 0.002     2013-04-09 13:50:37 Europe/Paris
-    - new commands: user
+    - new command: user
     - config: possibility to delete a config (-d option)
     - log: possibility to timestamp (-t option, log.timestamp config)
     - log: possibility to trace (-T option, log.trace config)
